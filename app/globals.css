@@ -212,7 +212,7 @@ button:hover {
 .mood-select > div > input {
     display: inline-block;
     position: absolute;
-    z-index: 5;
+    z-index: -1;
 }
 
 .mood-select > div > label:hover {
