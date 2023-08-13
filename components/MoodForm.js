@@ -1,3 +1,4 @@
+"use client"
 import zero from '../assets/images/0.svg';
 import one from '../assets/images/1.svg';
 import two from '../assets/images/2.svg';
@@ -53,23 +54,23 @@ export default function MoodForm () {
                 <div className="mood-select">
                     <div>
                         <label for="mood"><img src={zero.src} alt="Mood Zero" /></label>
-                        <input type="radio" name="mood" id="1" value="1" />
+                        <input type="radio" name="mood" id="0" value="0" />
                     </div>
                     <div>
                         <label for="mood"><img src={one.src} alt="Mood One" /></label>
-                        <input type="radio" name="mood" id="2" value="2" />
+                        <input type="radio" name="mood" id="1" value="1" />
                     </div>
                     <div>
                         <label for="mood"><img src={two.src} alt="Mood Two" /></label>
-                        <input type="radio" name="mood" id="3" value="3" />
+                        <input type="radio" name="mood" id="2" value="2" />
                     </div>
                     <div>
                         <label for="mood"><img src={three.src} alt="Mood Three" /></label>
-                        <input type="radio" name="mood" id="4" value="4" />
+                        <input type="radio" name="mood" id="3" value="3" />
                     </div>
                     <div>
                         <label for="mood"><img src={four.src} alt="Mood Four" /></label>
-                        <input type="radio" name="mood" id="0" value="0" />
+                        <input type="radio" name="mood" id="4" value="4" />
                     </div>
                 </div>
                 <button type="submit">Record Mood</button>
