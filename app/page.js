@@ -1,95 +1,78 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import avatar from '../assets/images/avatar.svg';
+import logo from '../assets/images/mood-tracker-logo.svg';
+import icon from '../assets/images/mood-tracker-icon.svg';
+import MoodCard from '../components/MoodCard';
+import MoodForm from '../components/MoodForm';
+
 
 export default function Home() {
+  const moodData = [
+    {
+      date: "August 2, 2023",
+      rating: 3,
+      notes: "Spent day in meetings. Frustrated at work with what feels like busy work. Spent the whole the whole evening after work outside with Anna and Cam playing catch"
+    },
+    {
+      date: "August 3, 2023",
+      rating: 3,
+      notes: "Spent morning talking to kevin. Met Ryan. Went to lunch with Anna and movie after work. Was sad cam wasn’t home."
+    },
+    {
+      date: "August 4, 2023",
+      rating: 1,
+      notes: "Had interview with potential new boss. Guy seemed good, but it just made me feel down because a lot of what he talked about is stuff we discuss doing, but can’t act on. Then being told I made a mistake for something Jason Cox did when I was just asking questions."
+    },
+    {
+      date: "August 5, 2023",
+      rating: 2,
+      notes: "Was alright. Maddie stayed at the house and she just gets cam going. From taunting to encouraging bad habits.  We went to pool and swam a bit."
+    },
+    {
+      date: "August 6, 2023",
+      rating: 4,
+      notes: "stayed home all day for most part. Was super hot. Woke up early, got some running in, a tiny bit of coding, lots of reading and cam did good at swim. Cleaned house up. Love watching Anna and cam play,  I also love playing with cam too."
+    },
+    {
+      date: "August 7, 2023",
+      rating: 2,
+      notes: "Feeling overwhelmed. So much to do, no idea where to start. The real positive was the number of steps I was able to get in."
+    },
+    {
+      date: "August 8, 2023",
+      rating: 3,
+      notes: "Played Hot Wheels With Cam and got a new track. Started writing everything down that I want to do/need to do."
+    },
+    {
+      date: "August 9, 2023",
+      rating: 2,
+      notes: "Super tired and fairly unproductive day. Woke up late. Had good talk with Kevin and played with Cam that made the day better."
+    },
+  ]
+  
+  const moods = moodData.map(((item) => {
+     return (<MoodCard date={item.date} mood={item.rating} notes={item.notes} />)
+    })) 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <header>
+      <div className="container">
+        <img className="full-width" src={logo.src} alt="Mood Tracker" />
+        <img className="mobile" src={icon.src} alt="Mood Tracker" />
+        <img src={avatar.src} alt="Brandon's Mood Tracker" />
+      </div>
+    </header>
+    <main>
+      <div className="container record-mood">
+        <h2>Record Mood</h2>
+        <MoodForm />  
+      </div>
+      <div className="container">
+        <h2>History</h2>
+        <div id="mood-history">
+          {moods}
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
+    </>
   )
 }
