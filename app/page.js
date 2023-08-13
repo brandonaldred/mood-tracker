@@ -63,7 +63,7 @@ export default function Home() {
     </header>
     <main>
       <div className="container record-mood">
-        <h2>Record Mood</h2>
+        <h2>Add Mood</h2>
         <MoodForm />  
       </div>
       <div className="container">
