@@ -68,16 +68,20 @@ header > .container {
     grid-template-columns: 2fr 1fr 7fr 1fr;
     justify-content: center;
     align-content: start;
-    gap: 16px;
+    gap: 10px;
     font-size: .85rem;
     border-bottom: 1px solid var(--lt-purple);
     padding: 25px 0;
 }
 
 .mood-card > h3 {
-    font-size: .85rem;
+    font-size: .6rem;
     color: var(--lt-purple);
-    justify-self: center;
+    justify-self: start;
+    white-space:nowrap;
+    overflow: hidden;
+    align-self: start;
+    margin-top: 5px;
 }
 
 .mood-card > .mood-img {
@@ -96,6 +100,7 @@ header > .container {
 
 .mood-notes {
     line-height: 1.5rem;
+    align-self: start;
 }
 
 .mood-card span {
@@ -172,6 +177,10 @@ button:hover {
     margin: 40px 0;
 }
 
+.mood-selected {
+    background-color: #D6D6D6;
+}
+
 .mood-select > div {
     display: flex;
     justify-content: center;
@@ -203,8 +212,14 @@ button:hover {
 .mood-select > div > input {
     display: inline-block;
     position: absolute;
-    z-index: -1;
+    z-index: 5;
 }
+
+.mood-select > div > label:hover {
+    cursor: pointer;
+}
+
+
 
 @media screen and (min-width: 751px) {
     .full-width {
@@ -219,5 +234,9 @@ button:hover {
     .mood-card > .mood-img {
         width: 32px;
         margin-top: -8px;
+    }
+    .mood-card > h3 {
+        font-size: 1rem;
+        margin-top: 0;
     }
 }

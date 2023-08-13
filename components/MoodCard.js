@@ -9,35 +9,14 @@ import plus from '../assets/images/plus-icon.svg';
 import minus from '../assets/images/minus-icon.svg';
 
 export default function MoodCard (props) {
-
   const [ open, setOpen ] = useState(false);
-
-  let mood;
-  switch (props.mood) {
-    case 0:
-      mood = zero;
-      break;
-    case 1:
-      mood = one;
-      break;
-    case 2:
-      mood = two;
-      break;
-    case 3:
-      mood = three;
-      break;
-    case 4:
-      mood = four;
-      break;
-    default:
-      mood = two;
-      break; 
-  }
+  const moods = ['zero', 'one', 'two', 'three', 'four']
+  const moodImages = [zero, one, two, three, four]
     return (
         <div>
           <div className="mood-card">
             <h3>{props.date}</h3>
-            <img className="mood-img" src={mood.src} alt={`Mood: ${props.mood}`}  />
+            <img className="mood-img" src={moodImages[props.mood].src} alt={`Mood: ${moods[props.mood]}`}  />
             <p className={`mood-notes ${ open ? 'notes-open' : 'notes-closed' }`}>
               {props.notes}
             </p>
