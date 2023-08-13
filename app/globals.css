@@ -145,6 +145,13 @@ textarea {
     border-radius: 8px;
     resize: none;
     box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+    height: 75px;
+    transition: height 1s;
+}
+
+textarea:focus-within {
+    height: 200px;
+    transition: height 1s;
 }
 
 button {

@@ -15,7 +15,7 @@ export default function MoodForm () {
         <>
             <h3>{`${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</h3>
             <form>
-                <textarea placeholder="Notes:"></textarea>
+                <textarea maxLength="450" placeholder="Notes:"></textarea>
                 <div className="mood-select">
                     {moods}
                 </div>
