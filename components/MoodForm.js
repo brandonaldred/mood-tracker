@@ -1,4 +1,4 @@
-"use client"
+
 import zero from '../assets/images/0.svg';
 import one from '../assets/images/1.svg';
 import two from '../assets/images/2.svg';
@@ -6,6 +6,9 @@ import three from '../assets/images/3.svg';
 import four from '../assets/images/4.svg';
 
 export default function MoodForm () {
+    function handleSelect() {
+        console.log('clicked');
+    }
     const date = new Date();
     let month
     switch (date.getMonth()) {
@@ -46,9 +49,10 @@ export default function MoodForm () {
             month = "December"
             break;
     }
+
     return (
         <>
-            <h3>{`${month} ${date.getDay()}, ${date.getFullYear()}`}</h3>
+            <h3>{`${month} ${date.getDate()}, ${date.getFullYear()}`}</h3>
             <form>
                 <textarea placeholder="Notes:"></textarea>
                 <div className="mood-select">
