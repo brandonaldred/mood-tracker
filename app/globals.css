@@ -224,7 +224,7 @@ button:hover {
     opacity: 0;
 }
 
-.mood-select > div > label:hover {
+.mood-select > div > input:hover {
     cursor: pointer;
 }
 
