@@ -9,7 +9,6 @@ import four from '../assets/images/4.svg';
 export default function Moods (props) {
     const moods = ['zero', 'one', 'two', 'three', 'four']
     const moodImages = [zero, one, two, three, four]
-    const [selected, setSelected ] = useState(0)
     let className
     selected ? className = 'mood-selected' : '';
     function changeShit(event) {
