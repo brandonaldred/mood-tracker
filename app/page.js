@@ -25,7 +25,7 @@ export default function Home() {
       </div>
       <div className="container">
         <h2>History</h2>
-        <MoodHistory />
+        <MoodHistory key="1" />
       </div>
     </main>
     </>

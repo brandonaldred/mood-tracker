@@ -20,15 +20,11 @@ export default function MoodHistory() {
         getMoodHistory()
     },[])
 
+
     return (
         <div id="mood-history">
-            {moods.map(item => {
-                <MoodCard
-                        key={item._id}
-                        date={item.date}
-                        moodRating={item.moodRating}
-                        notes={item.notes}
-                    />
+            {moods.map(m => {
+                return <MoodCard key={m.id} date={m.date} mood={m.moodRating} notes={m.notes} />
             })}
         </div>
     )
