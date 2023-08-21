@@ -1,4 +1,3 @@
-import axios from 'axios';
 import avatar from '../assets/images/avatar.svg';
 import logo from '../assets/images/mood-tracker-logo.svg';
 import icon from '../assets/images/mood-tracker-icon.svg';
@@ -25,7 +24,7 @@ export default function Home() {
       </div>
       <div className="container">
         <h2>History</h2>
-        <MoodHistory key={1} />
+        <MoodHistory />
       </div>
     </main>
     </>
