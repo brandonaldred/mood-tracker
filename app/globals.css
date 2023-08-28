@@ -108,7 +108,7 @@ header > .container {
 }
 
 .mood-card .notes-closed {
-    height: 20px;
+    height: 25px;
     white-space:nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

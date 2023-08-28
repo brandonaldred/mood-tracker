@@ -12,17 +12,41 @@ export default function MoodForm () {
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
     const [selected, setSelected] = useState(3)
-    
+    const [notes, setNotes] = useState('')
+
     const moods = ['zero', 'one', 'two', 'three', 'four']
     const moodImages = [zero, one, two, three, four]
 
     //Need state to keep track of selected mood - can be integer.
+    function sendForm(e) {
+        e.preventDefault()
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "date": date,
+        "notes": notes,
+        "moodRating": moods.findIndex((e) => e == selected)
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("http://localhost:3000/api/moods", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
 
     return (
         <>
             <h3>{`${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</h3>
-            <form method="POST" action="/api/moods">
-                <textarea maxLength="450" placeholder="Notes:"></textarea>
+            <form>
+                <textarea maxLength="450" placeholder="Notes:" value={notes} onChange={(e) =>{ setNotes(e.target.value) }}/>
                 <div className="mood-select">
                     {moods.map((mood, index) => {
                         return (
@@ -35,7 +59,7 @@ export default function MoodForm () {
                         )
                     })}
                 </div>
-                <button type="submit">Record Mood</button>
+                <button type="submit" onClick={ (e) => { sendForm(e) } }>Record Mood</button>
             </form>
         </>
     )

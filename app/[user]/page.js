@@ -1,9 +1,9 @@
 import axios from 'axios';
-import avatar from '../assets/images/avatar.svg';
-import logo from '../assets/images/mood-tracker-logo.svg';
-import icon from '../assets/images/mood-tracker-icon.svg';
-import MoodForm from '../components/MoodForm';
-import MoodHistory from '../components/MoodHistory';
+import avatar from '../../assets/images/avatar.svg';
+import logo from '../../assets/images/mood-tracker-logo.svg';
+import icon from '../../assets/images/mood-tracker-icon.svg';
+import MoodForm from '../../components/MoodForm';
+import MoodHistory from '../../components/MoodHistory';
 
 
 
