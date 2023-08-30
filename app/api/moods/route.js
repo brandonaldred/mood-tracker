@@ -11,7 +11,7 @@ export async function POST(req) {
 
 export async function GET() {
   await connectMongoDB();
-  const moods = await Mood.find().sort({date: -1});
+  const moods = await Mood.find();
   return NextResponse.json({ moods });
 }
 

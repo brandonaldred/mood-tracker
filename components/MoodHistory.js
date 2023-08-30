@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MoodCard from '../components/MoodCard';
 
-export default function MoodHistory() {
-
+export default function MoodHistory(props) {
     const [ moods, setMoods ] = useState([]);
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
@@ -21,15 +20,15 @@ export default function MoodHistory() {
         getMoodHistory()
     },[])
 
-
+    const cards = moods.map(m => {
+        const month = new Date(m.date).getMonth()
+        const day = new Date(m.date).getDate()
+        const year = new Date(m.date).getFullYear()
+        return <MoodCard key={m.id} date={`${months[month]} ${day}, ${year}`} mood={m.moodRating} notes={m.notes} />
+    })
     return (
         <div id="mood-history">
-            {moods.map(m => {
-                const month = new Date(m.date).getMonth()
-                const day = new Date(m.date).getDate()
-                const year = new Date(m.date).getFullYear()
-                return <MoodCard key={m.id} date={`${months[month]} ${day}, ${year}`} mood={m.moodRating} notes={m.notes} />
-            })}
+            {cards}
         </div>
     )
 }

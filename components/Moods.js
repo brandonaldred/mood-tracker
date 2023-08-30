@@ -17,7 +17,7 @@ export default function Moods (props) {
     }
     return(
         <div className={ className }>
-            <label for="mood"><img src={moodImages[props.mood].src} alt={`Mood: ${moods[props.mood]}`} /></label>
+            <label htmlFor="mood"><img src={moodImages[props.mood].src} alt={`Mood: ${moods[props.mood]}`} /></label>
             <input type="radio" name="mood" id={props.mood} value={props.mood} checked={selected === props.mood} onChange={(e) => {setSelected(e.target.value)}}/>
         </div>
     )
