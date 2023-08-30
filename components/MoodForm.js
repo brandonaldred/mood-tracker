@@ -11,20 +11,29 @@ export default function MoodForm () {
 
     const date = new Date();
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
-    const [notes, setNotes] = useState("")
+
     const [selected, setSelected] = useState(3)
     const [notes, setNotes] = useState('')
-
     const moods = ['zero', 'one', 'two', 'three', 'four']
     const moodImages = [zero, one, two, three, four]
 
-    //Need state to keep track of selected mood - can be integer.
+    function formSubmit(e) {
+        e.preventDefault()
+        try {
+            axios.post('/api/moods', {
+                date: date,
+                notes: notes,
+                moodRating: moods.indexOf(selected)
+            })
+        } catch (err) { console.log(err) }
+        setNotes('')
+    }
 
     return (
         <>
             <h3>{`${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</h3>
-            <form method="POST" action="/api/moods">
-                <textarea maxLength="450" placeholder="Notes:"></textarea>
+            <form>
+                <textarea maxLength="450" placeholder="Notes:" value={notes} onChange={(e) => { setNotes(e.target.value)}} />
                 <div className="mood-select">
                     {moods.map((mood, index) => {
                         return (
@@ -37,7 +46,7 @@ export default function MoodForm () {
                         )
                     })}
                 </div>
-                <button type="submit">Record Mood</button>
+                <button onClick={ (e) => { formSubmit(e) } } type="submit">Record Mood</button>
             </form>
         </>
     )
