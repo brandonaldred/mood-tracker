@@ -12,7 +12,7 @@ export default function MoodForm () {
     const date = new Date();
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
-    const [selected, setSelected] = useState(3)
+    const [selected, setSelected] = useState(-1)
     const [notes, setNotes] = useState('')
     const moods = ['zero', 'one', 'two', 'three', 'four']
     const moodImages = [zero, one, two, three, four]
@@ -26,7 +26,7 @@ export default function MoodForm () {
                 moodRating: moods.indexOf(selected)
             })
         } catch (err) { console.log(err) }
-        setNotes('')
+        window.location.reload();
     }
 
     return (
