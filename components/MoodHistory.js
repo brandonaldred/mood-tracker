@@ -6,7 +6,7 @@ import MoodCard from '../components/MoodCard';
 export default function MoodHistory(props) {
     const [ moods, setMoods ] = useState([]);
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
-    const [loading, setLoading] = useEffect(false)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         async function getMoodHistory() {
