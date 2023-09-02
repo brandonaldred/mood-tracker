@@ -6,6 +6,7 @@ import two from '../assets/images/2.svg';
 import three from '../assets/images/3.svg';
 import four from '../assets/images/4.svg';
 import axios from 'axios'
+import { usePathname } from 'next/navigation'
 
 export default function MoodForm () {
 
@@ -16,6 +17,7 @@ export default function MoodForm () {
     const [notes, setNotes] = useState('')
     const moods = ['zero', 'one', 'two', 'three', 'four']
     const moodImages = [zero, one, two, three, four]
+    const pathname = usePathname()
 
     function formSubmit(e) {
         e.preventDefault()
@@ -23,12 +25,12 @@ export default function MoodForm () {
             axios.post('/api/moods', {
                 date: date,
                 notes: notes,
-                moodRating: moods.indexOf(selected)
+                moodRating: moods.indexOf(selected),
+                userName: pathname.substring(1)
             })
         } catch (err) { console.log(err) }
         window.location.reload();
     }
-
     return (
         <>
             <h3>{`${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</h3>

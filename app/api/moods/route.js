@@ -3,15 +3,16 @@ import { NextResponse } from "next/server";
 import Mood from "@/models/mood";
 
 export async function POST(req) {
-  const { date, notes, moodRating } = await req.json();
+  const { date, notes, moodRating, userName } = await req.json();
   await connectMongoDB();
-  await Mood.create({ date, notes, moodRating })
+  await Mood.create({ date, notes, moodRating, userName })
   return NextResponse.json({message: "Mood created successfully!"}, {status: 201})
 }
 
-export async function GET() {
+export async function GET(req) {
+  const user = req.nextUrl.searchParams.get('user')
   await connectMongoDB();
-  const moods = await Mood.find().sort({date: -1});
+  const moods = await Mood.find( { userName: user } ).sort({date: -1});
   return NextResponse.json({ moods });
 }
 

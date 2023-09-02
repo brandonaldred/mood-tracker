@@ -2,17 +2,18 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MoodCard from '../components/MoodCard';
+import { usePathname } from 'next/navigation'
 
 export default function MoodHistory(props) {
     const [ moods, setMoods ] = useState([]);
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
     const [loading, setLoading] = useState(false)
-
+    const path = `/api/moods?user=${usePathname().substring(1)}`
     useEffect(() => {
         async function getMoodHistory() {
             try {
                 setLoading(true)
-                const data = await axios.get('/api/moods')
+                const data = await axios.get(path)
                 const list = data.data
                 const arr = list.moods
                 arr.sort((a,b) => { new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1 })

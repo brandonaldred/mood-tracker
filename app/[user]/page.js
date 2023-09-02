@@ -5,8 +5,6 @@ import icon from '../../assets/images/mood-tracker-icon.svg';
 import MoodForm from '../../components/MoodForm';
 import MoodHistory from '../../components/MoodHistory';
 
-
-
 export default function Home() {
   
   return (
