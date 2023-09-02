@@ -6,16 +6,22 @@ import MoodCard from '../components/MoodCard';
 export default function MoodHistory(props) {
     const [ moods, setMoods ] = useState([]);
     const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+    const [loading, setLoading] = useEffect(false)
 
     useEffect(() => {
         async function getMoodHistory() {
             try {
+                setLoading(true)
                 const data = await axios.get('/api/moods')
                 const list = data.data
                 const arr = list.moods
                 arr.sort((a,b) => { new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1 })
                 setMoods(arr)
-            } catch (error) { console.log(error) }
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+                console.log(error)
+            }
         }
         getMoodHistory()
     },[])
@@ -28,6 +34,7 @@ export default function MoodHistory(props) {
     })
     return (
         <div id="mood-history">
+            {loading && <p>Loading...</p>}
             {cards}
         </div>
     )
