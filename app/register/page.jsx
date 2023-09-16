@@ -33,7 +33,7 @@ export default function Register() {
             <h3>Register</h3>
             <form>
                 <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" placeholder="First Name" onChange={(e) => {setFirstName(e.target.value)}} />
+                <input data-name="test" type="text" id="first-name" placeholder="First Name" onChange={(e) => {setFirstName(e.target.value)}} />
                 <label htmlFor="last-name">Last Name</label>
                 <input type="text" id="last-name" placeholder="Last Name" onChange={(e) => {setLastName(e.target.value)}} />
                 <label htmlFor="username">Username</label>

@@ -5,6 +5,10 @@
 
 .hero {
     background-color: var(--lt-selected);
+    background-image: url('https://images.unsplash.com/photo-1522003555840-aacb28f4d21a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2618&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y:top;
     box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
 }
 

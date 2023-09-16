@@ -72,6 +72,13 @@
     border-radius: var(--md-radius);
 }
 
+.account-form > form > #first-name::after {
+    content: 'test';
+    width: 500px;
+    height: 500px;
+    background-color: red;
+} 
+
 @media screen and (max-width: 600px) {
     .account-form p:first-of-type {
         font-size: .85rem;
