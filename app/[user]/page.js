@@ -4,6 +4,7 @@ import logo from '../../assets/images/mood-tracker-logo.svg';
 import icon from '../../assets/images/mood-tracker-icon.svg';
 import MoodForm from '../../components/MoodForm';
 import MoodHistory from '../../components/MoodHistory';
+import Link from 'next/link';
 
 export default function Home() {
   
@@ -11,7 +12,7 @@ export default function Home() {
     <>
     <header>
       <div className="container">
-        <img className="full-width" src={logo.src} alt="Mood Tracker" />
+        <Link href="/"><img className="full-width" src={logo.src} alt="Mood Tracker" /></Link>
         <img className="mobile" src={icon.src} alt="Mood Tracker" />
         <img src={avatar.src} alt="Brandon's Mood Tracker" />
       </div>
