@@ -100,3 +100,10 @@
     background-color: var(--purple);
     color: var(--lt-gray);
 }
+
+@media screen and (max-width: 600px) {
+    .how ul {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
