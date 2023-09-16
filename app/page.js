@@ -35,11 +35,11 @@ export default function Index() {
                     </li> 
                 </ul>
             </div>
-            <div className={styles.signup}>
+            <div className={`${styles.signup} ${styles.section}`}>
                 <h2>Why Wait? Start Your Journey to Emotional Well-being Today!</h2>
-                <Link href="/register">Register For Free</Link>
+                <Link className={styles.register} href="/register">Register For Free</Link>
             </div>
-            <div className={styles.footer}>
+            <div className={`${styles.footer}`}>
                 <p><img src={icon.src} alt="MoodTracker" /> &copy;</p>
                 <ul>
                     <li><Link href="/contact">Contact Us</Link></li>
