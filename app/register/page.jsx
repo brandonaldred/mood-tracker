@@ -30,7 +30,9 @@ export default function Register() {
         <div className={styles['account-form']}>
             <Link href="/"><img className={styles['account-logo']} src={logo.src} alt="Mood Tracker" /></Link>
             <p>A smarter way to understand your emotional well-being.</p>
-            <h3>Register</h3>
+            <div className={styles.register}>
+                <h3>Register</h3>
+            </div>
             <form>
                 <label htmlFor="first-name">First Name</label>
                 <input data-name="test" type="text" id="first-name" placeholder="First Name" onChange={(e) => {setFirstName(e.target.value)}} />
