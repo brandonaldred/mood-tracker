@@ -40,12 +40,17 @@ export default function Index() {
                 <Link className={styles.register} href="/register">Register For Free</Link>
             </div>
             <div className={`${styles.footer}`}>
-                <p><img src={icon.src} alt="MoodTracker" /> &copy;</p>
-                <ul>
-                    <li><Link href="/contact">Contact Us</Link></li>
-                    <li><Link href="/privacy">Privacy</Link></li>
-                    <li><Link href="/terms">Terms & Conditions</Link></li>
-                </ul>
+                <div className={`${styles.footerContents}`}>
+                    <div>    
+                        <img src={icon.src} alt="MoodTracker" />
+                        <p>&copy; 2023 MoodTracker</p>
+                    </div>
+                    <ul>
+                        <li><Link href="/contact">Contact Us</Link></li>
+                        <li><Link href="/privacy">Privacy</Link></li>
+                        <li><Link href="/terms">Terms & Conditions</Link></li>
+                    </ul>
+                </div>
             </div>
         </>
     )
