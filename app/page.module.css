@@ -1,11 +1,11 @@
-.hero, .how, .signup {
+.hero, .how {
     padding: 45px 25px 150px;
     text-align: center;
 }
 
 .hero {
     background-color: var(--lt-selected);
-    background-image: url('https://images.unsplash.com/photo-1522003555840-aacb28f4d21a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2618&q=80');
+    background-image: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y:top;
@@ -95,9 +95,16 @@
 }
 
 .signup {
-    background-color: var(--lt-selected);
+    padding: 45px 25px;
+    margin: auto;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1569415131538-587d156aac48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
     box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
-    color: var(--black)
+    color: var(--white);
+    border-top: 3px solid var(--white);
 }
 
 .signup h2 {
