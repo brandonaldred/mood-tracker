@@ -25,7 +25,7 @@ export default function Register() {
 
     return (
         <div className={styles['account-form']}>
-            <img className={styles['account-logo']} src={logo.src} alt="Mood Tracker" />
+            <Link href="/"><img className={styles['account-logo']} src={logo.src} alt="Mood Tracker" /></Link>
             <p>A smarter way to understand your emotional well-being.</p>
             <h3>Login</h3>
             <form>

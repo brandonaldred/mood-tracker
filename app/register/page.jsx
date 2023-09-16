@@ -1,9 +1,9 @@
 "use client"
-import { useState } from "react"
-import axios from 'axios'
+import { useState } from "react";
+import axios from 'axios';
 import logo from '../../assets/moodtracker-purple.svg';
-import styles from './page.module.css'
-import Link from 'next/link'
+import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function Register() {
     const [firstName, setFirstName] = useState('')
@@ -28,7 +28,7 @@ export default function Register() {
 
     return (
         <div className={styles['account-form']}>
-            <img className={styles['account-logo']} src={logo.src} alt="Mood Tracker" />
+            <Link href="/"><img className={styles['account-logo']} src={logo.src} alt="Mood Tracker" /></Link>
             <p>A smarter way to understand your emotional well-being.</p>
             <h3>Register</h3>
             <form>
