@@ -8,8 +8,8 @@ const userSchema = new Schema(
         email_address: {type: String, required: true, unique: true},
         username: {type: String, required: true, unique: true},
         password: {type: String, required: true},
-        location: {type: String, required: true},
-        birthday: {type: Date, required: true},
+        location: {type: String, required: false},
+        birthday: {type: Date, required: false},
         avatar: {type: String, required: false, default: ''},
         tracking: Array
     },

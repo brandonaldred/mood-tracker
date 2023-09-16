@@ -1,0 +1,102 @@
+.hero, .how, .signup {
+    padding: 45px 25px 150px;
+    text-align: center;
+}
+
+.hero {
+    background-color: var(--lt-selected);
+    box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+}
+
+.section h1, .section p {
+    width: 95%;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 4rem auto 2rem auto;
+    line-height: 3.5rem;
+}
+
+.hero p {
+    color: var(--purple);
+    margin: auto;
+    max-width: 550px;
+}
+
+.hero a:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    max-width: 300px;
+    margin: 2rem auto;
+}
+
+.register {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--white);
+    background: linear-gradient(169deg, #835DF0 0%, rgba(131, 93, 240, 0.00) 100%), var(--dk-purple, #6739EF);
+    border: none;
+    border-radius: var(--md-radius);
+    box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+}
+
+.register:hover {
+    cursor: pointer;
+    background: linear-gradient(169deg, #6f4dcc 0%, rgba(21, 11, 48, 0) 100%), var(--dk-purple, #4d2bb1);
+}
+
+.login {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--lt-text);
+}
+
+.login span {
+    color: var(--purple);
+}
+
+.how {
+    background-color: var(--white);
+    box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+}
+
+.how h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    margin: 3rem;
+}
+
+.how ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 750px;
+    margin: auto;
+}
+
+.how li {
+    list-style: none;
+}
+
+.how img{
+    display: block;
+    width: 30%;
+    margin: 2.5rem auto;
+    text-align: center; 
+}
+
+.signup {
+    background-color: var(--black);
+    box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+    color: var(--white)
+}
+
+.footer {
+    background-color: var(--purple);
+    color: var(--lt-gray);
+}

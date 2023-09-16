@@ -1,0 +1,89 @@
+.account-form {
+    max-width: 600px;
+    width: 90%;
+    margin: 100px auto;
+    border-radius: var(--md-radius);
+    box-shadow: 0px 0px 102px 0px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    color: var(--gray);
+    border-top: var(--md-radius) solid var(--purple);
+}
+
+.account-logo {
+    margin: 2rem auto;
+    width: 30%;
+    display: block;
+}
+
+.account-form p:first-of-type {
+    color: var(--purple);
+    font-size: 1rem;
+    text-align: center;
+    width: 65%;
+    margin: 2rem auto;
+}
+
+.account-form p:last-of-type {
+    color: var(--gray);
+    text-align: center;
+    width: 65%;
+    margin: 2rem auto;
+    font-size: .8rem;
+}
+
+.account-form a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: var(--lt-purple);
+    text-decoration: none;
+}
+
+.account-form a span {
+    color: var(--lt-text);
+}
+
+.account-form h3 {
+    margin-bottom: 2rem;
+    color: var(--purple);
+}
+
+.account-form button, .account-form input {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.account-form label {
+    display: none;
+}
+
+.account-form input {
+    padding: 15px;
+    border-radius: var(--md-radius);
+    border: 2px solid var(--lt-selected);
+    font-size: 1rem;
+}
+
+.account-form input:focus, .account-form button:focus {
+    outline: 3px solid var(--lt-purple);
+    border-radius: var(--md-radius);
+}
+
+@media screen and (max-width: 600px) {
+    .account-form p:first-of-type {
+        font-size: .85rem;
+        width: 80%;
+    }
+
+    .account-form p:last-of-type {
+        font-size: .65rem;
+        width: 90%;
+    }
+
+    .account-logo {
+        width: 70%;
+    }
+}
