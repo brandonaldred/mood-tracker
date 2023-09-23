@@ -4,21 +4,26 @@ import axios from 'axios'
 import logo from '../../assets/moodtracker-purple.svg';
 import styles from './page.module.css'
 import Link from 'next/link'
+import { signIn } from "next-auth/react";
+import { useRouter } from 'next/navigation'
 
 export default function Register() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    function login(e) {
+    const router = useRouter();
+
+    const login = async (e) => {
         e.preventDefault()
         try {
-            axios.post('/api/login', {
-                first_name: firstName,
-                last_name: lastName,
-                email_address: email,
-                username: username,
-                password: password,
+            const res = await signIn('credentials', {
+                username, password, redirect: false
             })
+
+            if (res.error) {
+                return
+            }
+            router.replace(`/${username}`)
         } catch (err) { console.log(err) }
         
     }

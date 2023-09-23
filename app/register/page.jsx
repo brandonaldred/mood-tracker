@@ -4,6 +4,7 @@ import axios from 'axios';
 import logo from '../../assets/moodtracker-purple.svg';
 import styles from './page.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 export default function Register() {
     const [firstName, setFirstName] = useState('')
@@ -11,6 +12,8 @@ export default function Register() {
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    const router = useRouter();
 
     function login(e) {
         e.preventDefault()
@@ -22,6 +25,7 @@ export default function Register() {
                 username: username,
                 password: password,
             })
+            router.push(`/${username}`)
         } catch (err) { console.log(err) }
         
     }
@@ -34,15 +38,15 @@ export default function Register() {
                 <h3>Register</h3>
             </div>
             <form>
-                <label htmlFor="first-name">First Name</label>
+                <label htmlFor="first-name">Please Enter First Name</label>
                 <input data-name="test" type="text" id="first-name" placeholder="First Name" onChange={(e) => {setFirstName(e.target.value)}} />
-                <label htmlFor="last-name">Last Name</label>
+                <label htmlFor="last-name">Please Enter Last Name</label>
                 <input type="text" id="last-name" placeholder="Last Name" onChange={(e) => {setLastName(e.target.value)}} />
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Please Create A Username</label>
                 <input type="text" id="username" placeholder="User Name" onChange={(e) => {setUsername(e.target.value)}} />
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">Please Enter Email Address</label>
                 <input type="email" id="email" placeholder="Email Address" onChange={(e) => {setEmail(e.target.value)}} />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Please Create A Password</label>
                 <input type="password" id="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
                 <button onClick={ (e) => {login(e)} } type="submit">Create Account</button>
             </form>
