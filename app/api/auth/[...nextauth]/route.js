@@ -8,7 +8,8 @@ const authOptions = {
             credentials: {},
 
             async authorize(credentials) {
-                
+                const user = { username: "brandonaldred"}
+                return user
             }
         }),
     ],

@@ -5,6 +5,7 @@ import icon from '../../assets/images/mood-tracker-icon.svg';
 import MoodForm from '../../components/MoodForm';
 import MoodHistory from '../../components/MoodHistory';
 import Link from 'next/link';
+import LogOut from '../../components/LogOut';
 
 export default function Home() {
   
@@ -26,6 +27,7 @@ export default function Home() {
         <h2>History</h2>
         <MoodHistory key={1} />
       </div>
+      <LogOut />
     </main>
     </>
   )
