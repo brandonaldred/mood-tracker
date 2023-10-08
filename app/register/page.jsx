@@ -5,6 +5,8 @@ import logo from '../../assets/moodtracker-purple.svg';
 import styles from './page.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import { getServerSession } from 'next-auth'
+import { Redirect } from "next/navigation";
 
 export default function Register() {
     const [firstName, setFirstName] = useState('')
@@ -14,9 +16,11 @@ export default function Register() {
     const [password, setPassword] = useState('')
 
     const router = useRouter();
+    console.log(getServerSession);
 
     function login(e) {
         e.preventDefault()
+        console.log(`${firstName} ${lastName} ${email} ${username} ${password}`)
         try {
             axios.post('/api/register', {
                 first_name: firstName,
@@ -25,7 +29,7 @@ export default function Register() {
                 username: username,
                 password: password,
             })
-            router.push(`/${username}`)
+            router.push(`/login`)
         } catch (err) { console.log(err) }
         
     }

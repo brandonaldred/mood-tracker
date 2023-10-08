@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import axios from 'axios'
 import logo from '../../assets/moodtracker-purple.svg'
 import styles from './page.module.css'
 import Link from 'next/link'
@@ -10,12 +9,10 @@ import { useRouter } from 'next/navigation'
 export default function Register() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+    const [error, setError] = useState(false)
 
     const router = useRouter();
-
     const login = async (e) => {
-        console.log('clicked')
         e.preventDefault()
         try {
             const res = await signIn('credentials', {
@@ -23,10 +20,13 @@ export default function Register() {
             })
 
             if (res.error) {
-                console.log(res.error)
+                setError(true)
+                return
+            } else {
+                setError(false);
+                router.push('/mood');
             }
-            router.replace(`/${username}`)
-        } catch (err) { console.log(err) }
+        } catch (err) { console.log('error ' + err) }
         
     }
 
@@ -40,6 +40,7 @@ export default function Register() {
                 <input type="text" id="username" placeholder="User Name" onChange={(e) => {setUsername(e.target.value)}} />
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
+                { error && <p className={styles['login-error']}>Please check your user name or password.</p> }
                 <button onClick={ (e) => {login(e)} } type="submit">Login</button>
             </form>
             <p>By creating an account, you are agreeing to our Terms of Service and Privacy Policy.</p>

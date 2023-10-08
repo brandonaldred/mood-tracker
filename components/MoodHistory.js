@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MoodCard from '../components/MoodCard';
 import { usePathname } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 
 export default function MoodHistory(props) {
     const [ moods, setMoods ] = useState([]);
@@ -31,7 +32,7 @@ export default function MoodHistory(props) {
         const month = new Date(m.date).getMonth()
         const day = new Date(m.date).getDate()
         const year = new Date(m.date).getFullYear()
-        return <MoodCard key={m.id} date={`${months[month]} ${day}, ${year}`} mood={m.moodRating} notes={m.notes} />
+        return <MoodCard key={m._id} date={`${months[month]} ${day}, ${year}`} mood={m.moodRating} notes={m.notes} />
     })
     return (
         <div id="mood-history">

@@ -72,6 +72,10 @@
     border-radius: var(--md-radius);
 }
 
+.login-error {
+    color: red !important;
+}
+
 @media screen and (max-width: 600px) {
     .account-form p:first-of-type {
         font-size: .85rem;

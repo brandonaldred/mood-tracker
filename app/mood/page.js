@@ -1,4 +1,3 @@
-import axios from 'axios';
 import avatar from '../../assets/images/avatar.svg';
 import logo from '../../assets/images/mood-tracker-logo.svg';
 import icon from '../../assets/images/mood-tracker-icon.svg';
@@ -6,9 +5,23 @@ import MoodForm from '../../components/MoodForm';
 import MoodHistory from '../../components/MoodHistory';
 import Link from 'next/link';
 import LogOut from '../../components/LogOut';
+import { getSession } from 'next-auth/react';
 
-export default function Home() {
-  
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  return {
+    props: {
+      session,
+    },
+  }
+}
+ 
+export default function Home( {session }) {
+
+    console.log(session)
+
   return (
     <>
     <header>
